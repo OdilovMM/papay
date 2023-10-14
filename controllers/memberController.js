@@ -1,18 +1,18 @@
 let memberController = module.exports;
 
 memberController.home = (req, res) => {
-    console.log('GET cont.home')
+  console.log("GET cont.home");
   res.send("Homepage");
 };
 memberController.signup = (req, res) => {
-    console.log('POST cont.signup')
+  console.log("POST cont.signup");
   res.send("Signup");
 };
 memberController.login = (req, res) => {
-    console.log('POST cont.;ogin')
+  console.log("POST cont.login");
   res.send("Login");
 };
 memberController.logout = (req, res) => {
-    console.log('GET cont.logout')
-  res.send("LOgaout");
+  console.log("GET cont.logout");
+  res.send("Logout");
 };
