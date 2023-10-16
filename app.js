@@ -15,6 +15,7 @@ app.set("views", "views");
 app.set("view engine", "ejs");
 
 // 4 Routing code
-app.use("/", router);
+app.use("/", router);              // React
+// app.use("/restaurant", router_bssr); // an'anaviy 
 
 module.exports = app;
