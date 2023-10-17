@@ -5,7 +5,7 @@ const http = require("http");
 
 const mongoose = require("mongoose");
 
-let db;
+mongoose.set("strictQuery", true);
 const connectionString = process.env.MONGO_URL;
 
 mongoose.connect(

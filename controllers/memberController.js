@@ -8,17 +8,14 @@ memberController.signup = async (req, res) => {
     console.log("body:::", req.body);
 
     const member = new Member();
-    const new_member = await member.signupData(data);
+    new_member = await member.signupData(data);
 
-    res.json({state: 'succeed', data: new_member});
-  } catch (error) {
-    console.log(`ERROR, cont/signup, ${error.message}`);
-    res.json({state: 'fail', message: error.message})
+    res.json({ state: "succeed", data: new_member });
+  } catch (err) {
+    console.log(`ERROR, cont/signup, ${err.message}`);
+    res.json({ state: "fail", message: err.message });
   }
 };
-
-
-
 
 memberController.login = async (req, res) => {
   try {
@@ -28,16 +25,12 @@ memberController.login = async (req, res) => {
     const member = new Member();
     const result = await member.loginData(data);
 
-
-    res.json({state: 'succeed', data: result});
-  } catch (error) {
-    console.log(`ERROR, cont/login, ${error.message}`);
-    res.json({state: 'fail', message: error.message})
+    res.json({ state: "succeed", data: result });
+  } catch (err) {
+    console.log(`ERROR, cont/login, ${err.message}`);
+    res.json({ state: "fail", message: err.message });
   }
 };
-
-
-
 
 memberController.logout = (req, res) => {
   console.log("POST cont/logout");

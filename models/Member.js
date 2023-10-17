@@ -19,17 +19,18 @@ class Member {
       let result;
       try {
         result = await new_member.save();
-      } catch (mongo_error) {
+      } catch (mongo_err) {
+        console.log(mongo_err)
         throw new Error(Definer.auth_err1);
       }
 
       console.log(result);
 
       result.mb_password = "";
-
       return result;
-    } catch (error) {
-      throw error;
+
+    } catch (err) {
+      throw err;
     }
   }
 
@@ -50,12 +51,12 @@ class Member {
         input.mb_password,
         member.mb_password
       );
-      assert.ok(member, Definer.auth_err4);
+      assert.ok(isMatch, Definer.auth_err4);
       return await this.memberModel.findOne({ mb_nick: input.mb_nick }).exec();
 
       console.log("member::::", member);
-    } catch (error) {
-      throw error;
+    } catch (err) {
+      throw err;
     }
   }
 }
