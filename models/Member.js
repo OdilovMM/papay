@@ -20,7 +20,7 @@ class Member {
       try {
         result = await new_member.save();
       } catch (mongo_err) {
-        console.log(mongo_err)
+        console.log(mongo_err);
         throw new Error(Definer.auth_err1);
       }
 
@@ -28,7 +28,6 @@ class Member {
 
       result.mb_password = "";
       return result;
-
     } catch (err) {
       throw err;
     }
@@ -62,3 +61,5 @@ class Member {
 }
 
 module.exports = Member;
+
+//member service model

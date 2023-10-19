@@ -1,5 +1,9 @@
 const mongoose = require("mongoose");
-const { member_status_enums, member_type_enums, ordinary_enums } = require("../lib/config");
+const {
+  member_status_enums,
+  member_type_enums,
+  ordinary_enums,
+} = require("../lib/config");
 
 const memberSchema = new mongoose.Schema(
   {
@@ -87,3 +91,5 @@ const memberSchema = new mongoose.Schema(
 );
 
 module.exports = mongoose.model("Member", memberSchema);
+
+//schema model
